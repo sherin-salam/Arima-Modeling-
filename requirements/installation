@@ -1,10 +1,10 @@
 #install R Studio -link below 
 https://www.rstudio.com/products/rstudio/download/
 #libraries reqiured to execute arima modeling 
-#steps
+#**steps**
 #Open R
-#open console
-#type
+#open console write the following commads 
+
 install.packages("packagename")eg: install.packages("ggplot2")
 install ggplot2
 install forecast
