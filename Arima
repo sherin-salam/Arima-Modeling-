@@ -33,5 +33,5 @@ plot(Test_data,type='l',xlim=c(2,30),ylim=c(1,4000),xlab = 'days',ylab = 'Number
 lines(pred$pred,col='brown')
 
 
-**TO SEE THE PLOT REFFER THIS URL BELOW
+**TO SEE THE PLOT VISIT THIS URL BELOW
 http://rpubs.com/sherin/420309
