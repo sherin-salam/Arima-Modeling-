@@ -1,0 +1,37 @@
+#comments 
+#check the current working directory by using the following command 
+getwd()
+#set your current working directory where you would like to save ur data/file
+setwc("#path")
+
+#load the following libraries 
+#DOWNLOAD LIBRARY REFFER INSTALL PAGE
+#run the Seven commads as a block 
+library('ggplot2')#used for ploting 
+library('forecast')#used for utilizing the arima and predict functions 
+library('tseries')#used converting data into timeseries data
+
+
+
+Test_data<-read.csv("Test_data.csv")
+Test_data= ts(Test_data[,2])#taking the second column under considertion 
+
+
+
+**REFFER READ.ME FILE 
+#2 tells us that we need to take into account the Y value at 2 lags from a given time point t.**P VALUE 
+#1 tells us that the time series is not stationary, so we need to take a first-order difference.**d VALUE
+#6 tells us that this model takes into account the error term from 5 preceding/lagged values.**q VALUE
+**AS THE NUMBER OF OBSERVATIONS KEEPS INCREASING THE ABOVE VALUES ALSO KEEP CHANGING 
+
+
+
+
+pred = predict(arima(Test_data,order=c(2,1,6)),n.ahead =20)
+pred
+plot(Test_data,type='l',xlim=c(2,30),ylim=c(1,4000),xlab = 'days',ylab = 'Number of SMS sent ')
+lines(pred$pred,col='brown')
+
+
+**TO SEE THE PLOT REFFER THIS URL BELOW
+http://rpubs.com/sherin/420309
